@@ -1,0 +1,64 @@
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(202, 199, 196);
+  }
+.geralBlock{
+    background-color: #ffffff;
+    border-radius: 26px 26px 148px 26px;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    margin: 12px;
+}
+.geralBlock img{
+    align-self: center;
+    background-color: rgba(132, 0, 255, 0.562);
+    border-radius: 100%;
+    padding: 2rem;
+    height: 3rem;
+    width: 3rem;
+}
+.topBlock{
+    display: flex;
+    flex-direction: inline;
+    margin: 2rem;
+    align-self: center;
+    font-size: 26px;
+}
+.topBlock input{
+    font-size: 32px;
+    height: 3rem;
+    width: 6rem;
+    margin: 6px;
+    border-radius: 13px;
+    color:hsl(0, 0%, 8%);
+}
+.result{
+    display: flex;
+    align-self: center;
+    font-size: 48px;
+}
+.result-number{
+    color: #8a0083;
+}
+.none{
+    display: none;
+}
+@media (min-width: 768px) {
+    .geralBlock{
+        height: 41rem;
+        width: 43rem;
+        display: flex;
+        justify-self: center;
+        align-self: center;
+        direction: inline;
+        margin: 2rem 24rem 2rem 24rem;
+    }
+    .geralBlock img{
+        align-self: end;
+        margin: 1rem 2rem 1rem 1rem;
+    }
+}
