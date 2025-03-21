@@ -1,0 +1,152 @@
+
+/*
+  Custom components
+*/
+.error {
+  background-color: var(--error-100);
+  color: var(--error-500);
+  text-align: center;
+  padding: 1rem;
+  display: none;
+}
+.error.visible {
+  display: block;
+}
+
+#header {
+  background-color: #fff;
+  text-align: center;
+  padding: 0.5rem 0 1.5rem;
+}
+
+#header h1 {
+  font-size: 5rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.card {
+  /* border: 1px solid var(--border-color); */
+  border-radius: 6px;
+  padding: 10px 16px;
+  background-color: #fff;
+}
+.card > :first_child {
+  margin-top: 0;
+}
+.card > :last_child {
+  margin-bottom: 0;
+}
+
+.session_form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.login_form {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 10px 16px;
+  background-color: #fff;
+}
+
+.login_form input {
+  flex: 1;
+  border: 0;
+}
+
+.status_options {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.status_option {
+  font-size: 2rem;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  background-color: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 3rem;
+  text-align: center;
+  box-shadow: 0 1px 4px #0001;
+  cursor: pointer;
+}
+
+.status_option:hover {
+  background-color: var(--primary-100);
+  box-shadow: 0 0 0 1px var(--primary-400);
+}
+
+.status_option.selected {
+  box-shadow: 0 0 0 1px var(--primary-500);
+  background-color: var(--primary-100);
+}
+
+.status_option.selected:hover {
+  background-color: var(--primary-200);
+}
+
+.status_line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  margin-top: 15px;
+}
+
+.status_line:not(.no-line)::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background-color: var(--border-color);
+  left: 1.45rem;
+  bottom: calc(100% + 2px);
+  height: 15px;
+}
+
+.status_line .status {
+  font-size: 2rem;
+  background-color: #fff;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  border: 1px solid var(--border-color);
+}
+
+.status_line .desc {
+  color: var(--gray-500);
+}
+
+.status_line .author {
+  color: var(--gray-700);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.status_line .author:hover {
+  text-decoration: underline;
+}
+
+.signup_cta {
+  text-align: center;
+  text-wrap: balance;
+  margin-top: 1rem;
+}

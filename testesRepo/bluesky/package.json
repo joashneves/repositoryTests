@@ -13,10 +13,18 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@atproto/api": "^0.14.10",
+    "@atproto/common": "^0.4.8",
+    "@atproto/lexicon": "^0.4.9",
+    "@atproto/oauth-client-node": "^0.2.13",
+    "@atproto/sync": "^0.1.18",
+    "@atproto/syntax": "^0.4.0",
     "bluesky": "file:",
+    "dotnet": "^1.1.4",
     "next": "^15.2.3",
     "next-connect": "^1.0.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "swr": "^2.3.3"
   }
 }
