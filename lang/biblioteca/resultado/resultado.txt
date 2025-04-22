@@ -1,0 +1,12 @@
+palavras duplicadas no paragrafos 1: 
+      
+palavras duplicadas no paragrafos 2: 
+      
+palavras duplicadas no paragrafos 3: 
+      
+palavras duplicadas no paragrafos 4: 
+      
+palavras duplicadas no paragrafos 5: 
+     texto, são 
+palavras duplicadas no paragrafos 6: 
+     acontecem 

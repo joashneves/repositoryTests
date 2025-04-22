@@ -1,16 +1,3 @@
-const fs = require('fs')
-const trataErro = require('./funcoesErro.js')
-const caminhoArgumento = process.argv;
-const link = caminhoArgumento[2]
-
-fs.readFile(link, 'utf-8', (erro, texto) => {
-  try{
-  if (erro) throw erro;
-  contaPalavra(texto)
-} catch(erro){
-  trataErro(erro);
-}
-})
 
 function contaPalavra(texto){
   const paragrafos = extraiParagrafos(texto)
@@ -18,7 +5,7 @@ function contaPalavra(texto){
     if(!paragrafos) return []
     return verificaPalavraDuplicada(paragrafos)
   })
-  console.log(contagem)
+  return contagem
 }
 
 function extraiParagrafos(texto){
@@ -40,4 +27,8 @@ function verificaPalavraDuplicada(texto){
     }
   });
   return resultado
+}
+
+export {
+  contaPalavra
 }
