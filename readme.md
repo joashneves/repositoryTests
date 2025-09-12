@@ -7,4 +7,4 @@ _Enjoy_ :D
 Pasta aonde estão minhas paginas estaticas
 
 ## Lang
-Teste com linguagens para aprender a usalas
+Teste com linguagens para aprender a usa-la
