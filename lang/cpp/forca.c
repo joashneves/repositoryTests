@@ -15,6 +15,7 @@ int main(){
 
   char chutes[26];
 
+  printf("Jogo da forca");
   int tentativas = 0;
   printf("Digite uma letra: \n");
   do{
