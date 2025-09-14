@@ -1,6 +1,14 @@
 #include <stdio.h>
 #include <string.h>
 
+// cria função abertura para ser chamado
+void abertura(){
+  printf("**********\n");
+  printf("    Bem vindos ao jogo da força \n");
+   printf("**********\n");
+
+}
+
 int main(){
 
   int notas[] = {1, 2, 3, 4, 5, 6, 7,  8, 9, 10};
@@ -15,7 +23,7 @@ int main(){
 
   char chutes[26];
 
-  printf("Jogo da forca");
+  abertura(); // chama função criada
   int tentativas = 0;
   printf("Digite uma letra: \n");
   do{
