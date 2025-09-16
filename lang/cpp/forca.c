@@ -1,5 +1,11 @@
 #include <stdio.h>
 #include <string.h>
+#include <time.h>
+#include <stdlib.h>
+#include "forca.h" // declara as funções pelo header 
+
+// VARIAVEL GLOBAL
+char palavraSecreta[] = "palavra";
 
 // cria função abertura para ser chamado
 void abertura(){
@@ -9,13 +15,30 @@ void abertura(){
 
 }
 
+void escolhePalavra(){
+  FILE* file; // devolve um ponteiro de arquivo
+  file = fopen("palavras.txt", "r"); // fopen abre o arquivo como readonly
+
+  int quantidadelinha;
+  fscanf(file, "%d", &quantidadelinha);
+
+  srand(time(0));
+  int randomico = rand() % quantidadelinha;
+
+  for(int i = 0; i <= randomico; i++){
+    fscanf(file, "%s", palavrasecreta);
+  }
+
+  fclose(file); // fecha o arquivo
+
+}
+
 int main(){
 
   int notas[] = {1, 2, 3, 4, 5, 6, 7,  8, 9, 10};
 
   char mundo[] = "mundo, so que é um texto muito longo para testar quantoas caracters minha array vai aguentar ja que eu não lembro muito bem quantos cabe aqui\0"; // Cria variavel com char
 
-  char palavraSecreta[] = "palavra";
   //sprintf(mundo, "mundo"); // Caso não tivesse criado colocava a palavra mundo dentro do char
 
   int acertou = 0;

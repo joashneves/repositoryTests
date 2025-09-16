@@ -1,0 +1,2 @@
+void abertura();
+void escolhePalavra();
