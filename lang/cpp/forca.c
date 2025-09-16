@@ -18,6 +18,10 @@ void abertura(){
 void escolhePalavra(){
   FILE* file; // devolve um ponteiro de arquivo
   file = fopen("palavras.txt", "r"); // fopen abre o arquivo como readonly
+  if(file == 0){
+    printf("Desculpe mas algo saiu errado");
+    exit(1);
+  }
 
   int quantidadelinha;
   fscanf(file, "%d", &quantidadelinha);
@@ -26,12 +30,40 @@ void escolhePalavra(){
   int randomico = rand() % quantidadelinha;
 
   for(int i = 0; i <= randomico; i++){
-    fscanf(file, "%s", palavrasecreta);
+    fscanf(file, "%s", palavraSecreta);
   }
 
   fclose(file); // fecha o arquivo
 
 }
+
+void adicionaPalavra(){
+  char palavraNova[255];
+  FILE* file;
+  
+  printf("Qual palavra voce quer adicionar ?");
+  scanf("%s", palavraNova);
+
+  file = fopen("palavras.txt", "r+"); // le e escreve arquivo
+  if(file == 0){
+    printf("Desculpe mas algo saiu errado");
+    exit(1);
+  }
+
+
+  int qtd;
+  scanf(file, "%d", &qtd);
+  qtd++;
+
+  fseek(file, 0, SEEK_SET);
+  fprintf(file, "%d", qtd);
+
+  fseek(file, 0, SEEK_END);
+  fprintf(file, "\n%s", palavraNova);
+  fclose(file);
+
+}
+
 
 int main(){
 
