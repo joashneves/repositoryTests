@@ -1,34 +1,65 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "main.h";
+#include "mapa.h";
 
-int linhas;
-int colunas;
-char** mapa; // matrix de 5x10
+MAPA m;
+
+int acabou(){
+  return 0;
+}
+
+void move(char direcao){
+  int x;
+  int y;
+
+  for(int i = 0; i < m.linhas; i++){
+    for(int j = 0; j < m.colunas; j++){
+      if(m.matriz[i][j] == '@'){
+        x = i;
+        y = j;
+        break;
+      }
+    }
+  }
+
+  switch (direcao)
+  {
+  case 'a':
+    m.matriz[x][y-1] = '@';
+    break;
+    case 'w':
+    m.matriz[x-1][y] = '@';
+    break;
+  case 'd':
+    m.matriz[x][y+1] = '@';
+  break;
+  case 's':
+    m.matriz[x+1][y] = '@';/* code */
+  break;
+  default:
+    break;
+
+    m.matriz[x][y] = '.';
+
+  }
+
+}
 
 int main(){
   
-  FILE* f;
-  f = fopen('mapa.txt', 'r');
-  if(f == 0){
-    printf("Erro na leitura do mapa");
-    exit(1);
-  }
+  do{
 
-  fscanf(f, "%d %d", &linhas, &colunas );
+    char diracao;
 
-  // exemplo pratico de alocação de memoria de char de matriz
-  mapa = malloc(sizeof(char*) * linhas);
-  for(int i = 0; i < linhas; i++){
-    mapa[i] = malloc(sizeof(char) * (colunas + 1));
-  }
+    scanf(" %c", &diracao);
+    move(diracao);
+    lemapa(&m);
 
+    imprimemapa(&m);
+  }while (!acabou());
   
-  for(int i = 0; i < linhas; i++){
-    free(mapa[i]);
-    // libera memoria alocado
-  }
-  free(mapa);
-
+  
 
   /*
   // exemplo de alocação de memoria dinamica
@@ -58,14 +89,6 @@ int main(){
   */
   //
 
-  for(int i = 0; i < 5; i++){
-    fscanf(f, "%s", mapa[i]);
-  }
+  liberamapa(&m);
 
-  
-  for(int i = 0; i < 5; i++){
-    printf("%d\n", mapa[i]);
-  }
-
-  fclose(f);
 }
