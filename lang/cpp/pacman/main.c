@@ -38,6 +38,7 @@ void move(char direcao){
     m.matriz[x+1][y] = '@';/* code */
   break;
   default:
+  return;
     break;
 
     m.matriz[x][y] = '.';
